@@ -15,7 +15,6 @@
 import os
 import sys
 import optparse
-import setproctitle
 import logging as l
 from udprr.config import Configure
 from udprr.protocol import UdpBalance
@@ -31,10 +30,6 @@ LOGGING_LEVELS = {'critical': l.CRITICAL,
 
 
 def main():
-
-    # set unix process name
-    setproctitle.setproctitle('udprr')
-
     parser = optparse.OptionParser()
     parser.add_option('-l', '--logging-level',
         help='debug level default is warning')
@@ -54,7 +49,7 @@ def main():
             format='%(asctime)s %(levelname)s: %(message)s',
             datefmt='%Y-%m-%d %H:%M:%S')
     else:
-        l.basicConfig(level=logging_level, filename=options.logging_file,
+        l.basicConfig(level=logging_level, filename=options.log_file,
             format='%(asctime)s %(levelname)s: %(message)s',
             datefmt='%Y-%m-%d %H:%M:%S')
 
