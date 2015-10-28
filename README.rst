@@ -7,7 +7,7 @@ Installation
 Basic Python installation::
 
     # on most linux distributions...
-    git clone git://github.com/kmcminn/udprr.git
+    git clone git://github.com/sunpeak/udprr.git
     cd udprr/
     python setup.py install
     cp contrib/udprr.init /etc/rc.d/init.d/udprr
@@ -16,7 +16,7 @@ Basic Python installation::
 
     # edit udprr.conf for your setup, then...
 
-    chkconfig add udprr
+    chkconfig --add udprr
     chkconfig udprr on
     service udprr start
     
